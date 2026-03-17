@@ -2,225 +2,276 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Alfredo Olivas — Gira 2023</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js">
+// CFDI Facturación
+new Chart(document.getElementById('cCFDI'),{type:'bar',data:{
+  labels:['Triunfador Logística\n(35 facturas)','SACM Regalías\n(17 facturas)','Triomfar\n(1 factura)'],
+  datasets:[{data:[37680359,2960806,1551724],
+    backgroundColor:[SPO+'.7)',G+'.5)',MAR+'.7)'],borderColor:[SPO+'.9)',G+'.7)',MAR+'.9)'],borderWidth:1,borderRadius:6,barPercentage:.5}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.parsed.y.toLocaleString('es-MX')}}},
+    scales:{y:{beginAtZero:true,grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>'$'+(v/1000000).toFixed(0)+'M'}},x:{grid:{display:false}}}}});
+
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0a0b0f;--s1:#12131a;--s2:#1a1b25;--s3:#22232f;--gold:#c9a84c;--gold2:#e6c868;--gd:#8b7535;--t:#e8e6e1;--t2:#9b99a1;--t3:#5d5b63;--grn:#4ade80;--red:#f87171;--blu:#60a5fa;--pur:#a78bfa;--cyn:#22d3ee;--org:#fb923c;--pnk:#f472b6}
+:root{--bg:#0a0b0f;--s1:#12131a;--s2:#1a1b25;--s3:#22232f;--gold:#c9a84c;--gold2:#e6c868;--gd:#8b7535;--t:#e8e6e1;--t2:#9b99a1;--t3:#5d5b63;--grn:#4ade80;--red:#f87171;--blu:#60a5fa;--pur:#a78bfa;--cyn:#22d3ee;--org:#fb923c;--pnk:#f472b6;--spo:#ff9800;--marolvi:#5c6bc0;--trans:#fdd835}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--t);min-height:100vh;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
-.hero{position:relative;padding:50px 40px 35px;text-align:center;background:linear-gradient(180deg,rgba(201,168,76,.08) 0%,transparent 100%)}
+.hero{position:relative;padding:44px 40px 30px;text-align:center;background:linear-gradient(180deg,rgba(201,168,76,.08) 0%,transparent 100%)}
 .hero::after{content:'';position:absolute;bottom:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--gd),transparent)}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,3.2rem);font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold2),#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
-.hero .sub{font-size:13px;color:var(--t2);letter-spacing:5px;text-transform:uppercase;margin-bottom:8px}
-.hero .tour{font-family:'Playfair Display',serif;font-size:16px;color:var(--gd);font-style:italic;margin-bottom:20px}
-.ks{display:flex;justify-content:center;gap:0;flex-wrap:wrap;max-width:1200px;margin:0 auto}
-.kp{padding:16px 28px;text-align:center;position:relative}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,3rem);font-weight:900;background:linear-gradient(135deg,var(--gold),var(--gold2),#fff,var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.hero .sub{font-size:12px;color:var(--t2);letter-spacing:5px;text-transform:uppercase;margin-bottom:6px}
+.hero .tour{font-family:'Playfair Display',serif;font-size:15px;color:var(--gd);font-style:italic;margin-bottom:16px}
+.ks{display:flex;justify-content:center;flex-wrap:wrap;max-width:1200px;margin:0 auto}
+.kp{padding:14px 24px;text-align:center;position:relative}
 .kp:not(:last-child)::after{content:'';position:absolute;right:0;top:25%;height:50%;width:1px;background:var(--s3)}
-.kp .nm{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;color:var(--gold)}
-.kp .lb{font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:2px;margin-top:2px}
-.ct{max-width:1400px;margin:0 auto;padding:16px 24px 50px}
-.st{font-family:'Playfair Display',serif;font-size:20px;color:var(--gold);margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--s3);display:flex;align-items:center;gap:10px}
-.st .dt{width:7px;height:7px;background:var(--gold);border-radius:50%}
-.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:16px;margin-bottom:16px}
-.cc{background:var(--s1);border:1px solid var(--s3);border-radius:14px;padding:20px;overflow:hidden;transition:border-color .3s}
+.kp .nm{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;color:var(--gold)}
+.kp .lb{font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:2px;margin-top:2px}
+.ct{max-width:1440px;margin:0 auto;padding:14px 22px 50px}
+.st{font-family:'Playfair Display',serif;font-size:18px;color:var(--gold);margin:28px 0 14px;padding-bottom:7px;border-bottom:1px solid var(--s3);display:flex;align-items:center;gap:9px}
+.st .dt{width:6px;height:6px;background:var(--gold);border-radius:50%}
+.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:14px;margin-bottom:14px}
+.cc{background:var(--s1);border:1px solid var(--s3);border-radius:12px;padding:18px;overflow:hidden;transition:border-color .3s}
 .cc:hover{border-color:var(--gd)}
-.cc h3{font-family:'Playfair Display',serif;font-size:15px;color:var(--t);margin-bottom:3px}
-.cc .cs{font-size:11px;color:var(--t3);margin-bottom:14px}
-.cw{position:relative;height:260px}
-.cf{grid-column:1/-1}.cf .cw{height:320px}
-.tw{overflow-x:auto;margin-top:16px;border-radius:10px;border:1px solid var(--s3)}
-table{width:100%;border-collapse:collapse;font-size:12px}
-thead th{background:var(--s2);color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;padding:12px 8px;text-align:left;position:sticky;top:0;border-bottom:2px solid var(--gd);cursor:pointer;white-space:nowrap}
+.cc h3{font-family:'Playfair Display',serif;font-size:14px;color:var(--t);margin-bottom:2px}
+.cc .cs{font-size:10px;color:var(--t3);margin-bottom:12px}
+.cw{position:relative;height:240px}
+.cf{grid-column:1/-1}.cf .cw{height:300px}
+.tw{overflow-x:auto;margin-top:14px;border-radius:10px;border:1px solid var(--s3)}
+table{width:100%;border-collapse:collapse;font-size:11px}
+thead th{background:var(--s2);color:var(--gold);font-size:9px;text-transform:uppercase;letter-spacing:1.2px;padding:10px 6px;text-align:left;position:sticky;top:0;border-bottom:2px solid var(--gd);white-space:nowrap}
 tbody tr{border-bottom:1px solid var(--s3);transition:background .2s}
 tbody tr:hover{background:rgba(201,168,76,.04)}
-tbody td{padding:8px;color:var(--t2);vertical-align:middle;max-width:200px;overflow:hidden;text-overflow:ellipsis}
-.bg{display:inline-block;padding:2px 7px;border-radius:20px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
-.b-so{background:rgba(74,222,128,.12);color:var(--grn)}.b-pr{background:rgba(251,146,60,.12);color:var(--org)}.b-pu{background:rgba(96,165,250,.1);color:var(--blu)}
-.b-ef{background:rgba(248,113,113,.15);color:#f87171;padding:3px 8px;border-radius:5px;font-weight:700;font-size:10px;letter-spacing:.5px}
-.fl{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap;align-items:center}
-.fi{background:var(--s2);border:1px solid var(--s3);color:var(--t);padding:8px 14px;border-radius:7px;font-size:12px;font-family:'DM Sans';outline:none;min-width:180px}
+tbody td{padding:6px;color:var(--t2);vertical-align:middle}
+.bg{display:inline-block;padding:2px 6px;border-radius:16px;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.b-so{background:rgba(74,222,128,.12);color:var(--grn)}
+.b-spo{background:rgba(255,152,0,.15);color:var(--spo)}
+.b-mar{background:rgba(92,107,192,.15);color:var(--marolvi)}
+.b-tra{background:rgba(253,216,53,.2);color:#fdd835}
+.b-na{background:rgba(255,255,255,.06);color:var(--t3)}
+.b-ef{background:rgba(248,113,113,.15);color:#f87171;padding:2px 7px;border-radius:4px;font-weight:700;font-size:9px}
+.fl{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
+.fi{background:var(--s2);border:1px solid var(--s3);color:var(--t);padding:7px 12px;border-radius:6px;font-size:11px;font-family:'DM Sans';outline:none;min-width:160px}
 .fi:focus{border-color:var(--gd)}
-.fb{background:var(--s2);border:1px solid var(--s3);color:var(--t2);padding:7px 14px;border-radius:7px;font-size:11px;cursor:pointer;transition:all .3s;font-family:'DM Sans';text-transform:uppercase;letter-spacing:1px}
+.fb{background:var(--s2);border:1px solid var(--s3);color:var(--t2);padding:6px 12px;border-radius:6px;font-size:10px;cursor:pointer;transition:all .3s;font-family:'DM Sans';text-transform:uppercase;letter-spacing:.8px}
 .fb:hover,.fb.ac{background:var(--gd);color:var(--bg);border-color:var(--gold)}
-.ts{max-height:600px;overflow-y:auto}.ts::-webkit-scrollbar{width:5px}.ts::-webkit-scrollbar-track{background:var(--s1)}.ts::-webkit-scrollbar-thumb{background:var(--s3);border-radius:3px}
-.ft{text-align:center;padding:30px;color:var(--t3);font-size:11px;border-top:1px solid var(--s3);margin-top:30px}
-.ft span{color:var(--gd)}
+.ts{max-height:600px;overflow-y:auto}.ts::-webkit-scrollbar{width:4px}.ts::-webkit-scrollbar-track{background:var(--s1)}.ts::-webkit-scrollbar-thumb{background:var(--s3);border-radius:2px}
+.ft{text-align:center;padding:24px;color:var(--t3);font-size:10px;border-top:1px solid var(--s3);margin-top:24px}.ft span{color:var(--gd)}
 .total-row td{background:rgba(201,168,76,.08)!important;border-top:2px solid var(--gold)!important}
-@media(max-width:768px){.cg{grid-template-columns:1fr}.kp{padding:12px 16px}.ct{padding:12px}}
-@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.cc,.kp{animation:fu .5s ease both}
+.amp{font-family:'Playfair Display',serif;font-style:italic;color:var(--gold2);font-weight:400;letter-spacing:0;opacity:.85}
+@media(max-width:768px){.cg{grid-template-columns:1fr}.kp{padding:10px 14px}.ct{padding:10px}}
+@keyframes fu{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}.cc,.kp{animation:fu .5s ease both}
 </style>
 </head>
 <body>
 <div class="hero">
-  <div class="tour">Alfa y Omega Tour · Agenda Interna</div>
+  <div class="tour">Alfa y Omega Tour · Estructura Corporativa</div>
   <h1>Alfredo Olivas 2023</h1>
   <div class="sub">Dashboard Financiero Definitivo</div>
   <div class="ks">
-    <div class="kp"><div class="nm">88</div><div class="lb">Eventos Total</div></div>
+    <div class="kp"><div class="nm">88</div><div class="lb">Eventos</div></div>
     <div class="kp"><div class="nm">~70</div><div class="lb">Públicos</div></div>
-    <div class="kp"><div class="nm">~12</div><div class="lb">Particulares</div></div>
     <div class="kp"><div class="nm">25+</div><div class="lb">Estados</div></div>
     <div class="kp"><div class="nm">12+</div><div class="lb">Sold Out</div></div>
-    <div class="kp"><div class="nm">11</div><div class="lb">Meses</div></div>
+    <div class="kp"><div class="nm" style="color:var(--spo)">TRIUNFADOR</div><div class="lb">Feb-Jul</div></div>
+    <div class="kp"><div class="nm" style="color:var(--marolvi)">TRIOMFAR<br><span class="amp">&amp;</span> BARZA</div><div class="lb">Ago-Dic</div></div>
   </div>
 </div>
 <div class="ct">
-  <div class="st"><span class="dt"></span>Distribución y Análisis</div>
+  <div class="st"><span class="dt"></span>Estructura Corporativa <span class="amp">&amp;</span> Análisis</div>
   <div class="cg">
-    <div class="cc"><h3>Eventos por Mes</h3><div class="cs">Públicos vs Particulares</div><div class="cw"><canvas id="c1"></canvas></div></div>
+    <div class="cc"><h3>Eventos por Estructura</h3><div class="cs">Triunfador (antigua) → Transición → Triomfar <span class="amp">&amp;</span> Barza (nueva)</div><div class="cw"><canvas id="c0"></canvas></div></div>
+    <div class="cc"><h3>Eventos por Mes</h3><div class="cs">Coloreados por estructura corporativa</div><div class="cw"><canvas id="c1"></canvas></div></div>
+  </div>
+  <div class="cg">
     <div class="cc"><h3>Top Empresarios</h3><div class="cs">Por número de eventos operados</div><div class="cw"><canvas id="c2"></canvas></div></div>
-  </div>
-  <div class="cg">
     <div class="cc"><h3>Estructura de Negociación</h3><div class="cs">Tipos de deal (eventos públicos)</div><div class="cw"><canvas id="c3"></canvas></div></div>
+  </div>
+  <div class="cg">
     <div class="cc"><h3>Boleteras</h3><div class="cs">Participación por boletera</div><div class="cw"><canvas id="c4"></canvas></div></div>
+    <div class="cc"><h3>Entidad Receptora</h3><div class="cs">Canal final del dinero: Triunfador/Triomfar vs Barza vs Efectivo</div><div class="cw"><canvas id="c5"></canvas></div></div>
   </div>
   <div class="cg">
-    <div class="cc cf"><h3>Canales de Pago</h3><div class="cs">Métodos de liquidación documentados en la agenda interna</div><div class="cw"><canvas id="c5"></canvas></div></div>
+    <div class="cc cf"><h3>Flujo de Pagos por Estructura</h3><div class="cs">Triunfador: todo mezclado · Triomfar <span class="amp">&amp;</span> Barza: Empresarios→Triomfar, Boleteras→Barza</div><div class="cw"><canvas id="c6"></canvas></div></div>
   </div>
+
+  
+  <div class="st"><span class="dt"></span>Cruce con CFDI — Ingresos Facturados 2023</div>
   <div class="cg">
-    <div class="cc"><h3>Producción</h3><div class="cs">¿Quién pone la producción?</div><div class="cw"><canvas id="c6"></canvas></div></div>
-    <div class="cc"><h3>Tipo de Evento</h3><div class="cs">Público vs Particular vs Evento especial</div><div class="cw"><canvas id="c7"></canvas></div></div>
+    <div class="cc"><h3>Facturación por Entidad</h3><div class="cs">Total facturado CFDI: $42,192,889.61 · Declarado anual: $43,123,845.51</div><div class="cw"><canvas id="cCFDI"></canvas></div></div>
+    <div class="cc"><h3>Hallazgo: RFC de TRIOMFAR</h3><div class="cs">TRI230731N22 — Constituida 31 de julio 2023</div>
+      <div style="padding:16px 0">
+        <div style="background:var(--s2);border-radius:10px;padding:18px;margin-bottom:10px">
+          <div style="font-size:12px;color:var(--t3);margin-bottom:6px">TRIUNFADOR LOGÍSTICA (TLO190128QF0)</div>
+          <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--spo);font-weight:900">$37,680,359</div>
+          <div style="font-size:10px;color:var(--t3);margin-top:2px">35 facturas · May-Dic 2023 · 89.3% del total</div>
+        </div>
+        <div style="background:var(--s2);border-radius:10px;padding:18px;margin-bottom:10px">
+          <div style="font-size:12px;color:var(--t3);margin-bottom:6px">TRIOMFAR (TRI230731N22)</div>
+          <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--marolvi);font-weight:900">$1,551,724</div>
+          <div style="font-size:10px;color:var(--t3);margin-top:2px">1 factura · 14-Dic 2023 · 3.7% del total</div>
+        </div>
+        <div style="background:var(--s2);border-radius:10px;padding:18px">
+          <div style="font-size:12px;color:var(--t3);margin-bottom:6px">SACM (Regalías / Derechos de Autor)</div>
+          <div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--gold);font-weight:900">$2,960,806</div>
+          <div style="font-size:10px;color:var(--t3);margin-top:2px">17 facturas · 7.0% del total</div>
+        </div>
+      </div>
+    </div>
   </div>
+
   <div class="st"><span class="dt"></span>Listado Completo de Eventos</div>
   <div class="fl">
     <input class="fi" type="text" id="si" placeholder="Buscar ciudad, empresario, boletera...">
     <button class="fb ac" onclick="ft('all',this)">Todos</button>
-    <button class="fb" onclick="ft('pub',this)">Públicos</button>
-    <button class="fb" onclick="ft('priv',this)">Particulares</button>
+    <button class="fb" onclick="ft('spo',this)">TRIUNFADOR (Antigua)</button>
+    <button class="fb" onclick="ft('trans',this)">Transición</button>
+    <button class="fb" onclick="ft('mar',this)">TRIOMFAR <span class="amp">&amp;</span> BARZA</button>
     <button class="fb" onclick="ft('so',this)">Sold Out</button>
     <button class="fb" onclick="ft('ef',this)">Pago Efectivo</button>
   </div>
   <div class="tw"><div class="ts"><table><thead><tr>
-    <th>#</th><th>Fecha</th><th>Ciudad</th><th>Estado</th><th>Venue / Aforo</th><th>Empresario</th><th>Boletera</th><th>Negociación</th><th>Monto Pagado</th><th>Canal de Pago</th><th>Tipo</th><th>Notas</th>
+    <th>#</th><th>Fecha</th><th>Ciudad</th><th>Estado</th><th>Venue</th><th>Empresario</th><th>Boletera</th><th>Negociación</th><th>Monto</th><th>Canal Pago</th><th>Entidad Receptora</th><th>Estructura</th><th>Notas</th>
   </tr></thead><tbody id="tb"></tbody></table></div></div>
   <div class="ft"><p>Dashboard <span>Flexder Corporativo</span> · Datos compilados de agenda interna y evidencias documentales</p></div>
 </div>
 <script>
 Chart.defaults.color='#9b99a1';Chart.defaults.font.family="'DM Sans',sans-serif";Chart.defaults.font.size=11;
-const G='rgba(201,168,76,',B='rgba(96,165,250,',P='rgba(167,139,250,',C='rgba(34,211,238,',GR='rgba(74,222,128,',O='rgba(251,146,60,',PK='rgba(244,114,182,';
+const G='rgba(201,168,76,',SPO='rgba(255,152,0,',MAR='rgba(92,107,192,',TRA='rgba(253,216,53,';
 
+// 0. Structure breakdown
+new Chart(document.getElementById('c0'),{type:'doughnut',data:{labels:['TRIUNFADOR (Antigua)','Transición','TRIOMFAR & BARZA','Fuera de estructura'],
+  datasets:[{data:[20,10,30,4],backgroundColor:[SPO+'.6)',TRA+'.5)',MAR+'.6)','rgba(255,255,255,.08)'],borderColor:'#12131a',borderWidth:3}]},
+  options:{responsive:true,maintainAspectRatio:false,cutout:'58%',plugins:{legend:{position:'right',labels:{padding:12,usePointStyle:true,pointStyle:'circle'}}}}});
+
+// 1. Monthly by structure
 new Chart(document.getElementById('c1'),{type:'bar',data:{labels:['Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],datasets:[
-  {label:'Públicos',data:[3,4,7,9,5,14,4,10,8,7,7],backgroundColor:G+'.7)',borderRadius:4,barPercentage:.7},
-  {label:'Particulares',data:[0,2,2,1,1,0,0,1,0,2,1],backgroundColor:O+'.4)',borderRadius:4,barPercentage:.7}
-]},options:{responsive:!0,maintainAspectRatio:!1,plugins:{legend:{labels:{usePointStyle:!0,pointStyle:'circle',padding:12}}},scales:{y:{beginAtZero:!0,stacked:!0,grid:{color:'rgba(255,255,255,.04)'}},x:{stacked:!0,grid:{display:!1}}}}});
+  {label:'TRIUNFADOR',data:[3,3,5,8,4,1,0,0,0,0,0],backgroundColor:SPO+'.6)',borderRadius:3,barPercentage:.75},
+  {label:'Transición',data:[0,0,0,1,1,9,0,0,0,0,0],backgroundColor:TRA+'.5)',borderRadius:3,barPercentage:.75},
+  {label:'TRIOMFAR & BARZA',data:[0,0,0,0,0,4,4,8,7,5,6],backgroundColor:MAR+'.6)',borderRadius:3,barPercentage:.75}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{usePointStyle:true,pointStyle:'circle',padding:10,font:{size:10}}}},scales:{y:{beginAtZero:true,stacked:true,grid:{color:'rgba(255,255,255,.04)'}},x:{stacked:true,grid:{display:false}}}}});
 
+// 2. Top empresarios
 new Chart(document.getElementById('c2'),{type:'bar',data:{labels:['Rogelio "El Calá"','Gerardo Raya','Julio César','Germán/Israel López','Álvaro Rogel','Edgar Rodríguez','J.L. Ledezma','Víctor Cabrera','Chaguín','Lupita Cervantes'],
   datasets:[{data:[6,5,4,3,3,2,3,2,2,2],backgroundColor:G+'.4)',borderColor:G+'.7)',borderWidth:1,borderRadius:3,barPercentage:.6}]},
-  options:{indexAxis:'y',responsive:!0,maintainAspectRatio:!1,plugins:{legend:{display:!1}},scales:{x:{beginAtZero:!0,grid:{color:'rgba(255,255,255,.04)'}},y:{grid:{display:!1}}}}});
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{beginAtZero:true,grid:{color:'rgba(255,255,255,.04)'}},y:{grid:{display:false}}}}});
 
-// NEGOTIATION - sin "Vendida por AO"
+// 3. Negotiation (sin Vendida por AO)
 new Chart(document.getElementById('c3'),{type:'doughnut',data:{labels:['90/10 taquilla + barra','80/20 libre de gastos','85/15 libre de gastos','75/25 taquilla','Garantía fija','100% taquilla','Fecha pagada (monto fijo)'],
-  datasets:[{data:[32,8,3,2,3,1,3],backgroundColor:[G+'.7)',B+'.5)',P+'.5)',GR+'.5)',O+'.5)',PK+'.4)',C+'.4)'],borderColor:'#12131a',borderWidth:2}]},
-  options:{responsive:!0,maintainAspectRatio:!1,cutout:'55%',plugins:{legend:{position:'right',labels:{padding:10,usePointStyle:!0,pointStyle:'circle',font:{size:10}}}}}});
+  datasets:[{data:[32,8,3,2,3,1,3],backgroundColor:[G+'.7)','rgba(96,165,250,.5)','rgba(167,139,250,.5)','rgba(74,222,128,.5)','rgba(251,146,60,.5)','rgba(244,114,182,.4)','rgba(34,211,238,.4)'],borderColor:'#12131a',borderWidth:2}]},
+  options:{responsive:true,maintainAspectRatio:false,cutout:'55%',plugins:{legend:{position:'right',labels:{padding:8,usePointStyle:true,pointStyle:'circle',font:{size:9}}}}}});
 
-new Chart(document.getElementById('c4'),{type:'doughnut',data:{labels:['Fortunato','Gisela/Citibanamex','Boletomovil','Johanny/Giselle','Superboletos','TicketCity','Mistickets','Más boletos','Boletiworld','Otros/Local'],
-  datasets:[{data:[14,12,3,3,1,1,1,1,1,8],backgroundColor:[G+'.7)',C+'.6)',GR+'.5)',P+'.5)',B+'.5)',PK+'.4)',O+'.4)','rgba(255,200,200,.3)','rgba(200,200,255,.3)','rgba(255,255,255,.1)'],borderColor:'#12131a',borderWidth:2}]},
-  options:{responsive:!0,maintainAspectRatio:!1,cutout:'55%',plugins:{legend:{position:'right',labels:{padding:10,usePointStyle:!0,pointStyle:'circle',font:{size:10}}}}}});
+// 4. Boleteras
+new Chart(document.getElementById('c4'),{type:'doughnut',data:{labels:['Fortunato','Gisela/Citibanamex','Boletomovil','Johanny/Giselle','Superboletos','TicketCity','Mistickets','Más boletos','Boletiworld','Otros'],
+  datasets:[{data:[14,12,3,3,1,1,1,1,1,8],backgroundColor:[G+'.7)','rgba(34,211,238,.6)','rgba(74,222,128,.5)','rgba(167,139,250,.5)','rgba(96,165,250,.5)','rgba(244,114,182,.4)','rgba(251,146,60,.4)','rgba(255,200,200,.3)','rgba(200,200,255,.3)','rgba(255,255,255,.08)'],borderColor:'#12131a',borderWidth:2}]},
+  options:{responsive:true,maintainAspectRatio:false,cutout:'55%',plugins:{legend:{position:'right',labels:{padding:8,usePointStyle:true,pointStyle:'circle',font:{size:9}}}}}});
 
-new Chart(document.getElementById('c5'),{type:'bar',data:{labels:['Triunfador','Consorcio Barza','Efectivo / Piso 7','Barza+Citibanamex','Boletomovil→Barza','Fortunato→Barza','Importex','Arema','Transferencia directa'],
-  datasets:[{label:'Eventos',data:[28,12,15,8,3,4,1,2,6],backgroundColor:[G+'.6)',C+'.5)',O+'.5)',B+'.5)',GR+'.4)',P+'.4)','rgba(255,200,100,.3)','rgba(200,255,200,.3)',PK+'.3)'],borderRadius:4,barPercentage:.6}]},
-  options:{responsive:!0,maintainAspectRatio:!1,plugins:{legend:{display:!1}},scales:{y:{beginAtZero:!0,grid:{color:'rgba(255,255,255,.04)'}},x:{grid:{display:!1}}}}});
+// 5. Entidad receptora
+new Chart(document.getElementById('c5'),{type:'doughnut',data:{labels:['Triunfador (Antigua)','Triomfar (Nueva - Empresarios)','Barza / Consorcio Barza (Nueva - Boleteras)','AO Directo / Efectivo','Mixto / Transición','Sin dato'],
+  datasets:[{data:[18,8,22,8,6,4],backgroundColor:[SPO+'.6)',MAR+'.7)','rgba(34,211,238,.6)','rgba(248,113,113,.5)',TRA+'.4)','rgba(255,255,255,.06)'],borderColor:'#12131a',borderWidth:2}]},
+  options:{responsive:true,maintainAspectRatio:false,cutout:'55%',plugins:{legend:{position:'right',labels:{padding:8,usePointStyle:true,pointStyle:'circle',font:{size:9}}}}}});
 
-new Chart(document.getElementById('c6'),{type:'doughnut',data:{labels:['Llevamos producción','Ellos ponen producción','Llevamos complementos','Producción incluida','Sin dato'],
-  datasets:[{data:[42,8,6,3,15],backgroundColor:[G+'.7)',B+'.5)',P+'.4)',GR+'.4)','rgba(255,255,255,.08)'],borderColor:'#12131a',borderWidth:2}]},
-  options:{responsive:!0,maintainAspectRatio:!1,cutout:'55%',plugins:{legend:{position:'right',labels:{padding:12,usePointStyle:!0,pointStyle:'circle'}}}}});
-
-new Chart(document.getElementById('c7'),{type:'doughnut',data:{labels:['Público','Particular','Evento/Premios'],
-  datasets:[{data:[72,14,2],backgroundColor:[G+'.7)',O+'.5)',P+'.4)'],borderColor:'#12131a',borderWidth:3}]},
-  options:{responsive:!0,maintainAspectRatio:!1,cutout:'60%',plugins:{legend:{position:'right',labels:{padding:16,usePointStyle:!0,pointStyle:'circle'}}}}});
+// 6. Payment flow by structure
+new Chart(document.getElementById('c6'),{type:'bar',data:{labels:['Triunfador','AO Directo/Efectivo','Triomfar','Consorcio Barza','Barza Citibanamex','Boletomovil→Barza','Fortunato→Barza','Superboletos→Barza','Arema','Importex','Piso 7'],datasets:[
+  {label:'TRIUNFADOR (Antigua)',data:[16,5,0,0,0,0,0,0,0,1,0],backgroundColor:SPO+'.6)',borderRadius:3},
+  {label:'Transición',data:[5,2,0,0,1,0,0,0,1,0,1],backgroundColor:TRA+'.5)',borderRadius:3},
+  {label:'TRIOMFAR & BARZA',data:[0,1,6,6,7,3,4,1,0,0,0],backgroundColor:MAR+'.6)',borderRadius:3}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{usePointStyle:true,pointStyle:'circle',padding:10}}},scales:{y:{beginAtZero:true,stacked:true,grid:{color:'rgba(255,255,255,.04)'}},x:{stacked:true,grid:{display:false}}}}});
 
 const ev=[
-{n:1,f:'11 Feb',c:'Monterrey',e:'NL',v:'Arena Monterrey',em:'(con Luis R. Conríquez)',bo:'',ne:'$3.5K',mo:3500000,cp:'Efectivo',t:'P',no:'Pisteando Juntos Tour',so:false},
-{n:2,f:'18 Feb',c:'Autlán',e:'Jal',v:'',em:'Germán López García',bo:'',ne:'Garantía $3.5M',mo:1810000,cp:'Efectivo',t:'P',no:'',so:false},
-{n:3,f:'19 Feb',c:'Jalostotitlán',e:'Jal',v:'Palenque',em:'Germán López García',bo:'',ne:'Garantía $3.5M',mo:1750000,cp:'Efectivo/Triunfador',t:'P',no:'Carnaval Jalos',so:false},
-{n:4,f:'21 Mar',c:'Ameca',e:'Jal',v:'Campo Industria',em:'José Luis Ledezma',bo:'',ne:'3K garantía',mo:5000000,cp:'Triunfador',t:'P',no:'',so:false},
-{n:5,f:'25 Mar',c:'Tejupilco',e:'EdoMex',v:'Feria',em:'',bo:'',ne:'',mo:4000000,cp:'Triunfador',t:'P',no:'',so:false},
-{n:6,f:'28 Mar',c:'Irapuato',e:'Gto',v:'',em:'',bo:'',ne:'',mo:3000000,cp:'Triunfador',t:'P',no:'',so:false},
-{n:7,f:'1 Abr',c:'Cuernavaca',e:'Mor',v:'Palenque Feria de la Flor',em:'',bo:'',ne:'',mo:3000000,cp:'Triunfador',t:'P',no:'',so:false},
-{n:8,f:'2 Abr',c:'Tampico',e:'Tamps',v:'',em:'',bo:'',ne:'',mo:2000000,cp:'Triunfador',t:'P',no:'',so:false},
-{n:9,f:'28 Abr',c:'Puebla',e:'Pue',v:'Palenque Feria',em:'',bo:'Boletiworld',ne:'',mo:0,cp:'',t:'P',no:'SOLD OUT en 1 día',so:true},
-{n:10,f:'6 May',c:'Tijuana',e:'BC',v:'"El Coliseo"',em:'Rogelio "El Calá"',bo:'',ne:'90/10 taq+barra',mo:2000000,cp:'Triunfador',t:'P',no:'Sonorizando + LRC',so:false},
-{n:11,f:'7 May',c:'Torreón',e:'Coah',v:'"El Coliseo" (6,981)',em:'Rogelio "El Calá"',bo:'',ne:'90/10 taq+barra',mo:10000000,cp:'Triunfador',t:'P',no:'',so:false},
-{n:12,f:'11-12 May',c:'Torreón (x2)',e:'Coah',v:'El Coliseo (6,981)',em:'Rogelio "El Calá"',bo:'',ne:'90/10 taq+barra',mo:0,cp:'',t:'P',no:'SOLD OUT ambas',so:true},
-{n:13,f:'13 May',c:'Durango',e:'Dgo',v:'La Velaria (8,937)',em:'Edgar Rodríguez',bo:'Fortunato',ne:'90/10',mo:7000000,cp:'Triunfador',t:'P',no:'',so:false},
-{n:14,f:'20 May',c:'Zapotiltic',e:'Jal',v:'El Llanito (10,000)',em:'Oscar Espinoza Santos',bo:'',ne:'Pagada $4.5M',mo:4500000,cp:'Importex/Efectivo',t:'P',no:'',so:false},
-{n:15,f:'21 May',c:'Metepec',e:'EdoMex',v:'Explanada Recinto (~18K)',em:'Álvaro Rogel Mondragón',bo:'Gisela',ne:'90/10 taq+barra',mo:10524450,cp:'Efectivo/Barza Citibanamex',t:'P',no:'$150K USD + liquidación',so:false},
-{n:16,f:'26 May',c:'Villa de Álvarez',e:'Col',v:'Explanada Petatera',em:'Lupita / Carlos Álvarez',bo:'',ne:'90/10 taq+barra',mo:200000,cp:'Efectivo',t:'P',no:'LIQUIDADA',so:false},
-{n:17,f:'27 May',c:'Unión de Tula',e:'Jal',v:'Cancha Unión (~12K)',em:'Christian Castellanos',bo:'',ne:'$3M USD',mo:200000,cp:'Efectivo',t:'P',no:'Pagan en evento',so:false},
-{n:18,f:'31 May',c:'Puerto Vallarta',e:'Jal',v:'El Malecón (~12K)',em:'',bo:'LIBRE',ne:'',mo:5500000,cp:'Transferencia',t:'P',no:'GRATUITO. Aniv 105',so:false},
-{n:19,f:'2 Jun',c:'Apizaco',e:'Tlax',v:'Plaza de Toros',em:'Víctor Cabrera',bo:'Fortunato',ne:'90/10 taq+barra',mo:1980000,cp:'Triunfador',t:'P',no:'Show 360°',so:false},
-{n:20,f:'4 Jun',c:'Papantla',e:'Ver',v:'Estadio Anáhuac',em:'Víctor Cabrera',bo:'Fortunato',ne:'90/10',mo:0,cp:'',t:'P',no:'Feria Corpus Christi',so:false},
-{n:21,f:'17 Jun',c:'Los Mochis',e:'Sin',v:'Chevron Park',em:'Jaime',bo:'Fortunato',ne:'90/10',mo:6000000,cp:'Triunfador/Boletera',t:'P',no:'',so:false},
-{n:22,f:'23 Jun',c:'Los Mochis',e:'Sin',v:'Chevron Park (9,840)',em:'Armenia',bo:'Fortunato',ne:'90/10 barra',mo:4500000,cp:'Triunfador/Boletera',t:'P',no:'',so:false},
-{n:23,f:'24 Jun',c:'Culiacán',e:'Sin',v:'Estadio Los Dorados',em:'Paloma Tapia',bo:'Fortunato',ne:'',mo:1000000,cp:'Triunfador',t:'P',no:'',so:false},
-{n:24,f:'1 Jul',c:'San Juan del Río',e:'Qro',v:'Teatro del Pueblo',em:'Gerardo Raya / Johanny',bo:'Giselle',ne:'80/20 libre gastos',mo:1740000,cp:'Efectivo/Boletera/Triun',t:'P',no:'+70,000 asistentes. LIQUIDADA',so:false},
-{n:25,f:'7-8 Jul',c:'Chihuahua',e:'Chih',v:'Estadio Almanza (10,400)',em:'Rojo Máximo',bo:'',ne:'$17M + $1M prod',mo:17000000,cp:'Triunfador/Efectivo',t:'P',no:'LIQUIDADA. 2 fechas',so:false},
-{n:26,f:'9 Jul',c:'Cd. Juárez',e:'Chih',v:'Instalaciones Feria',em:'Rogelio',bo:'',ne:'$20M + $500K prod',mo:20000000,cp:'Triunfador/Boletera',t:'P',no:'Cierre Feria Juárez',so:false},
-{n:27,f:'14 Jul',c:'León',e:'Gto',v:'Palenque (6,534)',em:'Gerardo Raya / Johanny',bo:'Giselle',ne:'90/10 taq, 50/50 barra',mo:8500000,cp:'Triunfador/Boletera',t:'P',no:'SOLD OUT → 2da fecha',so:true},
-{n:28,f:'15 Jul',c:'León',e:'Gto',v:'Palenque (6,534)',em:'Gerardo Raya / Johanny',bo:'Giselle',ne:'90/10, 50%',mo:4500000,cp:'Triunfador',t:'P',no:'Nueva fecha',so:false},
-{n:29,f:'19 Jul',c:'San Buenaventura',e:'Coah',v:'Plaza de Toros (4,000)',em:'Rogelio "El Calá"',bo:'',ne:'$5,300,000',mo:5000000,cp:'Efectivo Piso 7',t:'P',no:'',so:false},
-{n:30,f:'21 Jul',c:'Mazatlán',e:'Sin',v:'Feria / Plaza Toros (4K)',em:'Jaime Armenia',bo:'Fortunato',ne:'90/10 taq+barra',mo:7500000,cp:'Efectivo/Fortunato/Triun',t:'P',no:'',so:false},
-{n:31,f:'22 Jul',c:'Tepic',e:'Nay',v:'Auditorio Amado Nervo',em:'Fortunato',bo:'Fortunato',ne:'90/10 taq+barra',mo:4000000,cp:'Triunfador/Boletera',t:'P',no:'Escenario 180',so:false},
-{n:32,f:'25 Jul',c:'Ciudad Valles',e:'SLP',v:'Aniv. ciudad (gratuito)',em:'Pepe Alvarado',bo:'',ne:'$6M + IVA',mo:6000000,cp:'Triunfador',t:'P',no:'Evento gratuito',so:false},
-{n:33,f:'27 Jul',c:'Durango',e:'Dgo',v:'Palenque Pancho Villa',em:'Edgar Rodríguez',bo:'Fortunato',ne:'80/20 libre gastos',mo:2000000,cp:'Triunfador',t:'P',no:'FENADU. LIQUIDADA',so:false},
-{n:34,f:'28 Jul',c:'Tulancingo',e:'Hgo',v:'Teatro del Pueblo',em:'Operador Betto',bo:'',ne:'$7,500,000',mo:7500000,cp:'Triunfador/Arema',t:'P',no:'',so:false},
-{n:35,f:'29 Jul',c:'Lagos de Moreno',e:'Jal',v:'Lienzo Charro Sta María',em:'Germán / Israel López',bo:'Fortunato',ne:'90/10, 10% op',mo:4148400,cp:'Fortunato/Barza',t:'P',no:'Apertura feria',so:false},
-{n:36,f:'30 Jul',c:'Salamanca',e:'Gto',v:'Plaza Coliseo',em:'Gerardo Raya',bo:'Fortunato',ne:'90/10 taq',mo:3395200,cp:'Transferencia',t:'P',no:'',so:false},
-{n:37,f:'19 Ago',c:'Oaxaca',e:'Oax',v:'Aud. Guelaguetza (10,729)',em:'Roberto Zirate',bo:'Fortunato',ne:'80/20, 50/50 barra',mo:2500000,cp:'Triunfador/Boletera',t:'P',no:'SOLD OUT',so:true},
-{n:38,f:'25 Ago',c:'San Luis de la Paz',e:'Gto',v:'Palenque (6,179)',em:'Gerardo Raya',bo:'',ne:'80/20 libre, Garantía 5K',mo:1500000,cp:'Consorcio Barza',t:'P',no:'',so:false},
-{n:39,f:'26 Ago',c:'San Luis Potosí',e:'SLP',v:'Palenque (6,179)',em:'Clemente',bo:'',ne:'$6M 50% IVA',mo:5980000,cp:'Triunfador',t:'P',no:'',so:false},
-{n:40,f:'27 Ago',c:'San Luis Potosí',e:'SLP',v:'Palenque (6,179)',em:'Clemente',bo:'',ne:'$6M 50% IVA',mo:4000000,cp:'Barza',t:'P',no:'2da fecha',so:false},
-{n:41,f:'1 Sep',c:'Zacatecas',e:'Zac',v:'Palenque (3,835)',em:'Julio César',bo:'Fortunato',ne:'85/15 libre gastos',mo:5060007,cp:'Barza/Fortunato',t:'P',no:'FENAZA',so:false},
-{n:42,f:'2 Sep',c:'Zacatecas',e:'Zac',v:'Palenque (3,835)',em:'Julio César',bo:'Fortunato',ne:'85/15',mo:4198800,cp:'Consorcio Barza/Gisela',t:'P',no:'',so:false},
-{n:43,f:'8 Sep',c:'Arandas',e:'Jal',v:'Palenque',em:'José Luis Ledezma',bo:'Gisela',ne:'90/10, 50/50 barra',mo:7057600,cp:'Consorcio Barza/Gisela',t:'P',no:'',so:false},
-{n:44,f:'9 Sep',c:'Arandas',e:'Jal',v:'Palenque',em:'José Luis Ledezma',bo:'Gisela',ne:'90/10, 50/50 barra',mo:0,cp:'',t:'P',no:'AGOTADO',so:true},
-{n:45,f:'15 Sep',c:'Reynosa',e:'Tamps',v:'',em:'Mauricio Loeza Torres',bo:'Gisela',ne:'50/50 barra',mo:1126100,cp:'Consorcio Barza/Efectivo',t:'P',no:'',so:false},
-{n:46,f:'16 Sep',c:'Nuevo Laredo',e:'Tamps',v:'Palenque (6,920)',em:'Daniel',bo:'Ellos ponen',ne:'80/20 libre gastos',mo:10000000,cp:'Múltiple',t:'P',no:'',so:false},
-{n:47,f:'20 Sep',c:'Saltillo',e:'Coah',v:'Explanada (10,000)',em:'Ramiro De Santiago',bo:'Gisela',ne:'90/10 taq+barra',mo:4407100,cp:'Consorcio Barza/Gisela',t:'P',no:'',so:false},
-{n:48,f:'25 Sep',c:'San Miguel de Allende',e:'Gto',v:'Teatro del Pueblo (40K)',em:'Sergio Gómez',bo:'',ne:'$6M 50% IVA',mo:3480000,cp:'Triunfador/Barza',t:'P',no:'Evento gratuito 40K personas',so:false},
-{n:49,f:'30 Sep',c:'CDMX',e:'CDMX',v:'Arena CDMX',em:'Álvaro Rogel',bo:'Superboletos',ne:'Anticipo $500K',mo:10826576,cp:'Transf Superboletos→Barza',t:'P',no:'Arena CDMX',so:false},
-{n:50,f:'6-7 Oct',c:'Monterrey (x2)',e:'NL',v:'Arena Monterrey (11,260)',em:'Mario Granillo (probable)',bo:'',ne:'',mo:0,cp:'',t:'P',no:'2 fechas',so:false},
-{n:51,f:'12 Oct',c:'Ciudad Guzmán',e:'Jal',v:'Explanada (15,000)',em:'Lupita Cervantes / Hilario',bo:'Gisela',ne:'100% entradas',mo:4956000,cp:'Barza/Citibanamex',t:'P',no:'',so:false},
-{n:52,f:'13 Oct',c:'Manzanillo',e:'Col',v:'Rancho San Andrés',em:'Lupita Cervantes',bo:'Gisela',ne:'90/10 taq+barra',mo:4956000,cp:'Barza/Citibanamex',t:'P',no:'',so:false},
-{n:53,f:'14 Oct',c:'CDMX (Macro)',e:'CDMX',v:'Evento del Macro',em:'El Topo',bo:'',ne:'',mo:500000,cp:'Efectivo',t:'P',no:'',so:false},
-{n:54,f:'20 Oct',c:'Tehuacán',e:'Pue',v:'Palenque',em:'Julio César Glez.',bo:'Más boletos',ne:'85/15 libre gastos',mo:5000000,cp:'',t:'P',no:'',so:false},
-{n:55,f:'21 Oct',c:'Toluca→Metepec',e:'EdoMex',v:'Toluca 80 → Explanada Metepec',em:'Álvaro Rogel Mondragón',bo:'Gisela',ne:'90/10 taq+barra',mo:10524450,cp:'Barza/Citibanamex',t:'P',no:'Cambió de sede',so:false},
-{n:56,f:'26 Oct',c:'Yecapixtla',e:'Mor',v:'Explanada de la feria',em:'Federico Figueroa',bo:'Boletomovil',ne:'80/20 libre gastos',mo:12463387,cp:'Boletomovil→Barza',t:'P',no:'Feria de la Cecina',so:false},
-{n:57,f:'3 Nov',c:'Guadalajara',e:'Jal',v:'Estadio 3 de Marzo',em:'Chaguín',bo:'Boletomovil',ne:'75/25 taq, 25/75 barra',mo:12463387,cp:'Boletomovil→Barza',t:'P',no:'NUEVA FECHA',so:false},
-{n:58,f:'4 Nov',c:'Guadalajara',e:'Jal',v:'Estadio 3 de Marzo',em:'Chaguín',bo:'Boletomovil',ne:'75/25 taq, 25/75 barra',mo:13582312,cp:'Boletomovil→Barza',t:'P',no:'AGOTADO',so:true},
-{n:59,f:'16 Nov',c:'Culiacán',e:'Sin',v:'Palenque',em:'FECHA AO',bo:'',ne:'$5K',mo:2350000,cp:'Efectivo/WhatsApp',t:'P',no:'SOLD OUT',so:true},
-{n:60,f:'24 Nov',c:'Villahermosa',e:'Tab',v:'Estadio Centenario',em:'Julio César',bo:'',ne:'$9K',mo:3000000,cp:'Transferencia/Triunfar',t:'P',no:'',so:false},
-{n:61,f:'25 Nov',c:'Tuxtla Gutiérrez',e:'Chis',v:'Foro Chiapas',em:'Federico López',bo:'TicketCity/Gisela',ne:'90/10 taq+barra',mo:6000000,cp:'Transferencia/Triunfar',t:'P',no:'',so:false},
-{n:62,f:'1 Dic',c:'Mérida',e:'Yuc',v:'Foro GNP Seguros',em:'J. Isaac Romo González',bo:'Gisela',ne:'90/10 taq+barra',mo:6380800,cp:'Barza/Citibanamex',t:'P',no:'',so:false},
-{n:63,f:'2 Dic',c:'Cancún',e:'QRoo',v:'Estadio Tigres',em:'Lupillo / Israel Avelar',bo:'Mistickets',ne:'90/10 taq+barra',mo:0,cp:'',t:'P',no:'SOLD OUT',so:true},
-{n:64,f:'5 Dic',c:'Querétaro',e:'Qro',v:'Palenque Feria Ganadera',em:'Hno. Julión',bo:'Boletito.com',ne:'80/20 libre gastos',mo:350000,cp:'',t:'P',no:'',so:false},
-{n:65,f:'6 Dic',c:'Querétaro',e:'Qro',v:'Palenque Feria Ganadera',em:'Hno. Julión',bo:'Boletito.com',ne:'90/10 taq+barra',mo:0,cp:'',t:'P',no:'',so:false},
-{n:66,f:'8 Dic',c:'Orizaba',e:'Ver',v:'Coliseo de la Concordia',em:'Ramiro',bo:'Gisela',ne:'90/10 taquilla',mo:350000,cp:'',t:'P',no:'SOLD OUT — OMEGA cierre gira',so:true},
+{n:1,f:'11 Feb',c:'Monterrey',e:'NL',v:'Arena Monterrey',em:'(con Luis R. Conríquez)',bo:'',ne:'$3.5K',mo:3500000,cp:'Efectivo directo a AO',er:'AO Directo',es:'TRIUNFADOR',no:'Pisteando Juntos Tour',so:false},
+{n:2,f:'18 Feb',c:'Autlán',e:'Jal',v:'',em:'Germán López García',bo:'',ne:'Garantía $3.5M',mo:1810000,cp:'Efectivo',er:'AO Directo',es:'TRIUNFADOR',no:'',so:false},
+{n:3,f:'19 Feb',c:'Jalostotitlán',e:'Jal',v:'Palenque',em:'Germán López García',bo:'',ne:'Garantía $3.5M',mo:1750000,cp:'Efectivo/Triunfador',er:'AO / Triunfador',es:'TRIUNFADOR',no:'Carnaval Jalos',so:false},
+{n:4,f:'21 Mar',c:'Ameca',e:'Jal',v:'Campo Industria',em:'José Luis Ledezma',bo:'',ne:'3K garantía',mo:5000000,cp:'Triunfador',er:'Triunfador',es:'TRIUNFADOR',no:'',so:false},
+{n:5,f:'25 Mar',c:'Tejupilco',e:'EdoMex',v:'Feria',em:'',bo:'',ne:'',mo:4000000,cp:'Triunfador',er:'Triunfador',es:'TRIUNFADOR',no:'',so:false},
+{n:6,f:'28 Mar',c:'Irapuato',e:'Gto',v:'',em:'',bo:'',ne:'',mo:3000000,cp:'Triunfador',er:'Triunfador',es:'TRIUNFADOR',no:'',so:false},
+{n:7,f:'1 Abr',c:'Cuernavaca',e:'Mor',v:'Palenque Feria de la Flor',em:'',bo:'',ne:'',mo:3000000,cp:'Triunfador',er:'Triunfador',es:'TRIUNFADOR',no:'',so:false},
+{n:8,f:'2 Abr',c:'Tampico',e:'Tamps',v:'',em:'',bo:'',ne:'',mo:2000000,cp:'Triunfador',er:'Triunfador',es:'TRIUNFADOR',no:'',so:false},
+{n:9,f:'28 Abr',c:'Puebla',e:'Pue',v:'Palenque Feria',em:'',bo:'Boletiworld',ne:'',mo:0,cp:'',er:'',es:'TRIUNFADOR',no:'SOLD OUT en 1 día',so:true},
+{n:10,f:'6 May',c:'Tijuana',e:'BC',v:'El Coliseo',em:'Rogelio "El Calá"',bo:'',ne:'90/10',mo:2000000,cp:'Triunfador',er:'Triunfador',es:'TRIUNFADOR',no:'Sonorizando + LRC',so:false},
+{n:11,f:'7 May',c:'Torreón',e:'Coah',v:'El Coliseo (6,981)',em:'Rogelio "El Calá"',bo:'',ne:'90/10',mo:10000000,cp:'Triunfador',er:'Triunfador',es:'TRIUNFADOR',no:'',so:false},
+{n:12,f:'11-12 May',c:'Torreón (x2)',e:'Coah',v:'El Coliseo',em:'Rogelio "El Calá"',bo:'',ne:'90/10',mo:0,cp:'',er:'',es:'TRIUNFADOR',no:'SOLD OUT ambas',so:true},
+{n:13,f:'13 May',c:'Durango',e:'Dgo',v:'La Velaria (8,937)',em:'Edgar Rodríguez',bo:'Fortunato',ne:'90/10',mo:7000000,cp:'Triunfador',er:'Triunfador',es:'TRIUNFADOR',no:'',so:false},
+{n:14,f:'20 May',c:'Zapotiltic',e:'Jal',v:'El Llanito (10K)',em:'Oscar Espinoza Santos',bo:'',ne:'Pagada $4.5M',mo:4500000,cp:'Importex/Efectivo',er:'Importex→Triunfador',es:'TRIUNFADOR',no:'',so:false},
+{n:15,f:'21 May',c:'Metepec',e:'EdoMex',v:'Explanada (~18K)',em:'Álvaro Rogel',bo:'Gisela',ne:'90/10',mo:10524450,cp:'Efectivo + Barza Citibanamex',er:'AO (efe) + Barza (liq)',es:'TRANS',no:'Anticipo viejo, liquidación nueva',so:false},
+{n:16,f:'26 May',c:'Villa de Álvarez',e:'Col',v:'Explanada Petatera',em:'Lupita/Carlos',bo:'',ne:'90/10',mo:200000,cp:'Efectivo oficina',er:'AO Directo',es:'TRIUNFADOR',no:'LIQUIDADA',so:false},
+{n:17,f:'27 May',c:'Unión de Tula',e:'Jal',v:'Cancha Unión (12K)',em:'Christian Castellanos',bo:'',ne:'$3M USD',mo:200000,cp:'Efectivo oficina',er:'AO Directo',es:'TRIUNFADOR',no:'',so:false},
+{n:18,f:'31 May',c:'Puerto Vallarta',e:'Jal',v:'El Malecón (12K)',em:'',bo:'LIBRE',ne:'',mo:5500000,cp:'Transferencia',er:'Triunfador',es:'TRIUNFADOR',no:'GRATUITO',so:false},
+{n:19,f:'2 Jun',c:'Apizaco',e:'Tlax',v:'Plaza de Toros',em:'Víctor Cabrera',bo:'Fortunato',ne:'90/10',mo:1980000,cp:'Triunfador',er:'Triunfador',es:'TRIUNFADOR',no:'Show 360°',so:false},
+{n:20,f:'4 Jun',c:'Papantla',e:'Ver',v:'Estadio Anáhuac',em:'Víctor Cabrera',bo:'Fortunato',ne:'90/10',mo:0,cp:'(incl. Apizaco)',er:'Triunfador',es:'TRIUNFADOR',no:'',so:false},
+{n:21,f:'23 Jun',c:'Los Mochis',e:'Sin',v:'Chevron Park (9,840)',em:'Armenia',bo:'Fortunato',ne:'90/10',mo:4500000,cp:'Triunfador/Boletera',er:'Triunfador',es:'TRANS',no:'',so:false},
+{n:22,f:'24 Jun',c:'Culiacán',e:'Sin',v:'Los Dorados',em:'Paloma Tapia',bo:'Fortunato',ne:'',mo:1000000,cp:'Triunfador (Industriamater)',er:'Triunfador',es:'TRANS',no:'',so:false},
+{n:23,f:'1 Jul',c:'San Juan del Río',e:'Qro',v:'Teatro del Pueblo',em:'Gerardo Raya',bo:'Giselle',ne:'80/20 libre',mo:1740000,cp:'Efectivo + Boletera + Triunfador',er:'Mixto',es:'TRANS',no:'+70K asistentes. LIQUIDADA',so:false},
+{n:24,f:'7-8 Jul',c:'Chihuahua',e:'Chih',v:'Almanza (10,400)',em:'Rojo Máximo',bo:'',ne:'$17M+$1M',mo:17000000,cp:'Triunfador + Efectivo caja',er:'Triunfador + AO',es:'TRANS',no:'LIQUIDADA. 2 fechas',so:false},
+{n:25,f:'9 Jul',c:'Cd. Juárez',e:'Chih',v:'Instalaciones Feria',em:'Rogelio',bo:'',ne:'$20M+$500K',mo:20000000,cp:'Triunfador + Industriamater',er:'Triunfador',es:'TRANS',no:'Cierre Feria Juárez',so:false},
+{n:26,f:'14 Jul',c:'León',e:'Gto',v:'Palenque (6,534)',em:'Gerardo Raya',bo:'Giselle',ne:'90/10, 50/50',mo:8500000,cp:'Triunfador Boletera',er:'Triunfador',es:'TRANS',no:'SOLD OUT',so:true},
+{n:27,f:'15 Jul',c:'León',e:'Gto',v:'Palenque (6,534)',em:'Gerardo Raya',bo:'Giselle',ne:'90/10',mo:4500000,cp:'Magih→Triunfador',er:'Triunfador (Magih)',es:'TRANS',no:'',so:false},
+{n:28,f:'19 Jul',c:'San Buenaventura',e:'Coah',v:'Pza Toros (4K)',em:'Rogelio "El Calá"',bo:'',ne:'$5.3M',mo:5000000,cp:'Efectivo Piso 7',er:'AO Directo (Piso 7)',es:'TRIUNFADOR',no:'',so:false},
+{n:29,f:'21 Jul',c:'Mazatlán',e:'Sin',v:'Feria/Pza Toros (4K)',em:'Jaime Armenia',bo:'Fortunato',ne:'90/10',mo:7500000,cp:'Efectivo + Fortunato→Triun',er:'Fortunato→Triunfador',es:'TRANS',no:'',so:false},
+{n:30,f:'22 Jul',c:'Tepic',e:'Nay',v:'Aud. Amado Nervo',em:'Fortunato',bo:'Fortunato',ne:'90/10',mo:4000000,cp:'Triunfador Boletera',er:'Triunfador',es:'TRANS',no:'',so:false},
+{n:31,f:'25 Jul',c:'Ciudad Valles',e:'SLP',v:'Aniv ciudad',em:'Pepe Alvarado',bo:'',ne:'$6M+IVA',mo:6000000,cp:'Triunfador',er:'Triomfar',es:'TRIOMFAR & BARZA',no:'Gratuito',so:false},
+{n:32,f:'27 Jul',c:'Durango',e:'Dgo',v:'Palenque Pancho Villa',em:'Edgar Rodríguez',bo:'Fortunato',ne:'80/20 libre',mo:2000000,cp:'Triunfador',er:'Triomfar',es:'TRIOMFAR & BARZA',no:'FENADU. LIQUIDADA',so:false},
+{n:33,f:'28 Jul',c:'Tulancingo',e:'Hgo',v:'Teatro del Pueblo',em:'Betto',bo:'',ne:'$7.5M',mo:7500000,cp:'Triunfador/Arema',er:'Triomfar (Arema)',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:34,f:'29 Jul',c:'Lagos de Moreno',e:'Jal',v:'Lienzo Charro',em:'Germán/Israel López',bo:'Fortunato',ne:'90/10',mo:4148400,cp:'Fortunato→Barza',er:'Barza (Boletera)',es:'TRIOMFAR & BARZA',no:'1er evento claro Fortunato→Barza',so:false},
+{n:35,f:'30 Jul',c:'Salamanca',e:'Gto',v:'Plaza Coliseo',em:'Gerardo Raya',bo:'Fortunato',ne:'90/10',mo:3395200,cp:'Transferencia+Triunfador',er:'Triomfar + Barza',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:36,f:'19 Ago',c:'Oaxaca',e:'Oax',v:'Guelaguetza (10,729)',em:'Roberto Zirate',bo:'Fortunato',ne:'80/20, 50/50',mo:2500000,cp:'Triunfador Boletera',er:'Triomfar + Barza',es:'TRIOMFAR & BARZA',no:'SOLD OUT',so:true},
+{n:37,f:'25 Ago',c:'San Luis de la Paz',e:'Gto',v:'Palenque (6,179)',em:'Gerardo Raya',bo:'',ne:'80/20, Gar 5K',mo:1500000,cp:'Consorcio Barza',er:'Barza',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:38,f:'26 Ago',c:'San Luis Potosí',e:'SLP',v:'Palenque (6,179)',em:'Clemente',bo:'',ne:'$6M 50% IVA',mo:5980000,cp:'Triunfador',er:'Triomfar',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:39,f:'27 Ago',c:'San Luis Potosí',e:'SLP',v:'Palenque (6,179)',em:'Clemente',bo:'',ne:'$6M 50% IVA',mo:4000000,cp:'Barza',er:'Barza',es:'TRIOMFAR & BARZA',no:'2da fecha',so:false},
+{n:40,f:'1 Sep',c:'Zacatecas',e:'Zac',v:'Palenque (3,835)',em:'Julio César',bo:'Fortunato',ne:'85/15 libre',mo:5060007,cp:'Barza/Fortunato',er:'Barza (Fortunato)',es:'TRIOMFAR & BARZA',no:'FENAZA',so:false},
+{n:41,f:'2 Sep',c:'Zacatecas',e:'Zac',v:'Palenque (3,835)',em:'Julio César',bo:'Fortunato',ne:'85/15',mo:4198800,cp:'Consorcio Barza/Gisela',er:'Barza (Gisela)',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:42,f:'8 Sep',c:'Arandas',e:'Jal',v:'Palenque',em:'J.L. Ledezma',bo:'Gisela',ne:'90/10, 50/50',mo:7057600,cp:'Consorcio Barza/Gisela',er:'Barza (Gisela)',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:43,f:'9 Sep',c:'Arandas',e:'Jal',v:'Palenque',em:'J.L. Ledezma',bo:'Gisela',ne:'90/10',mo:0,cp:'',er:'',es:'TRIOMFAR & BARZA',no:'AGOTADO',so:true},
+{n:44,f:'15 Sep',c:'Reynosa',e:'Tamps',v:'',em:'Mauricio Loeza T.',bo:'Gisela',ne:'50/50 barra',mo:1126100,cp:'Barza Citibanamex + Efectivo',er:'Barza + Efectivo',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:45,f:'16 Sep',c:'Nuevo Laredo',e:'Tamps',v:'Palenque (6,920)',em:'Daniel',bo:'Ellos',ne:'80/20 libre',mo:10000000,cp:'Barza Banbajío + Efectivo',er:'Barza + Efectivo',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:46,f:'20 Sep',c:'Saltillo',e:'Coah',v:'Explanada (10K)',em:'Ramiro De Santiago',bo:'Gisela',ne:'90/10',mo:4407100,cp:'Consorcio Barza/Gisela',er:'Barza (Gisela)',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:47,f:'25 Sep',c:'San Miguel Allende',e:'Gto',v:'Teatro Pueblo (40K)',em:'Sergio Gómez',bo:'',ne:'$6M 50% IVA',mo:3480000,cp:'Triunfador + Barza Santander',er:'Triomfar + Barza',es:'TRIOMFAR & BARZA',no:'Gratuito 40K',so:false},
+{n:48,f:'30 Sep',c:'CDMX',e:'CDMX',v:'Arena CDMX',em:'Álvaro Rogel',bo:'Superboletos',ne:'Anticipo $500K',mo:10826576,cp:'Superboletos→Consorcio Barza',er:'Barza (Superboletos)',es:'TRIOMFAR & BARZA',no:'Arena CDMX',so:false},
+{n:49,f:'6-7 Oct',c:'Monterrey (x2)',e:'NL',v:'Arena Mty (11,260)',em:'Mario Granillo',bo:'',ne:'',mo:0,cp:'',er:'',es:'TRIOMFAR & BARZA',no:'2 fechas',so:false},
+{n:50,f:'12 Oct',c:'Cd. Guzmán',e:'Jal',v:'Explanada (15K)',em:'Lupita Cervantes',bo:'Gisela',ne:'100% entradas',mo:4956000,cp:'Barza Citibanamex Gisela',er:'Barza (Gisela)',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:51,f:'13 Oct',c:'Manzanillo',e:'Col',v:'Rancho San Andrés',em:'Lupita Cervantes',bo:'Gisela',ne:'90/10',mo:4956000,cp:'Barza Citibanamex + Efectivo',er:'Barza + Efectivo',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:52,f:'14 Oct',c:'CDMX (Macro)',e:'CDMX',v:'Evento del Macro',em:'El Topo',bo:'',ne:'',mo:500000,cp:'Efectivo (J.César→Jonathan→AO)',er:'Efectivo directo',es:'N/A',no:'Fuera de estructura',so:false},
+{n:53,f:'20 Oct',c:'Tehuacán',e:'Pue',v:'Palenque',em:'Julio César Glez.',bo:'Más boletos',ne:'85/15 libre',mo:5000000,cp:'',er:'',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:54,f:'21 Oct',c:'Toluca→Metepec',e:'EdoMex',v:'Explanada Metepec',em:'Álvaro Rogel',bo:'Gisela',ne:'90/10',mo:10524450,cp:'Barza Citibanamex Gisela',er:'Barza (Gisela)',es:'TRIOMFAR & BARZA',no:'Cambió sede',so:false},
+{n:55,f:'26 Oct',c:'Yecapixtla',e:'Mor',v:'Explanada feria',em:'Federico Figueroa',bo:'Boletomovil',ne:'80/20 libre',mo:12463387,cp:'Boletomóvil→Barza',er:'Barza (Boletomovil)',es:'TRIOMFAR & BARZA',no:'Feria Cecina',so:false},
+{n:56,f:'3 Nov',c:'Guadalajara',e:'Jal',v:'Estadio 3 de Marzo',em:'Chaguín',bo:'Boletomovil',ne:'75/25, 25/75',mo:12463387,cp:'Boletomóvil→Barza',er:'Barza (Boletomovil)',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:57,f:'4 Nov',c:'Guadalajara',e:'Jal',v:'Estadio 3 de Marzo',em:'Chaguín',bo:'Boletomovil',ne:'75/25, 25/75',mo:13582312,cp:'Boletomóvil→Barza',er:'Barza (Boletomovil)',es:'TRIOMFAR & BARZA',no:'AGOTADO',so:true},
+{n:58,f:'16 Nov',c:'Culiacán',e:'Sin',v:'Palenque',em:'FECHA AO',bo:'',ne:'$5K',mo:2350000,cp:'Efectivo Vianney/Jonathan',er:'AO Directo',es:'N/A',no:'SOLD OUT. Fecha propia AO',so:true},
+{n:59,f:'24 Nov',c:'Villahermosa',e:'Tab',v:'Estadio Centenario',em:'Julio César',bo:'',ne:'$9K',mo:3000000,cp:'Serv. Integrales→Triomfar',er:'Triomfar',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:60,f:'25 Nov',c:'Tuxtla Gutiérrez',e:'Chis',v:'Foro Chiapas',em:'Federico López',bo:'TicketCity/Gisela',ne:'90/10',mo:6000000,cp:'Serv. Integrales→Triomfar',er:'Triomfar',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:61,f:'1 Dic',c:'Mérida',e:'Yuc',v:'Foro GNP Seguros',em:'J. Isaac Romo González',bo:'Gisela',ne:'90/10',mo:6380800,cp:'Barza Citibanamex Gisela',er:'Barza (Gisela)',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:62,f:'2 Dic',c:'Cancún',e:'QRoo',v:'Estadio Tigres',em:'Lupillo/Israel Avelar',bo:'Mistickets',ne:'90/10',mo:0,cp:'',er:'',es:'TRIOMFAR & BARZA',no:'SOLD OUT',so:true},
+{n:63,f:'5 Dic',c:'Querétaro',e:'Qro',v:'Palenque Feria',em:'Hno. Julión',bo:'Boletito.com',ne:'80/20 libre',mo:350000,cp:'Efectivo/WhatsApp',er:'AO Directo',es:'N/A',no:'Hno. Julión',so:false},
+{n:64,f:'6 Dic',c:'Querétaro',e:'Qro',v:'Palenque Feria',em:'Hno. Julión',bo:'Boletito.com',ne:'90/10',mo:0,cp:'',er:'',es:'TRIOMFAR & BARZA',no:'',so:false},
+{n:65,f:'8 Dic',c:'Orizaba',e:'Ver',v:'Coliseo Concordia',em:'Ramiro',bo:'Gisela',ne:'90/10',mo:350000,cp:'',er:'',es:'TRIOMFAR & BARZA',no:'SOLD OUT — OMEGA cierre gira',so:true},
 ];
 
-function fCP(cp){if(!cp)return'';if(cp.toLowerCase().includes('efectivo')||cp.toLowerCase().includes('piso 7'))return'<span class="b-ef">'+cp+'</span>';return cp}
+function fCP(cp){if(!cp)return'';if(cp.toLowerCase().includes('efectivo')||cp.toLowerCase().includes('piso'))return'<span class="b-ef">'+cp+'</span>';return cp}
+function fES(es){if(es==='TRIUNFADOR')return'<span class="bg b-spo">TRIUNFADOR</span>';if(es==='TRIOMFAR & BARZA')return'<span class="bg b-mar">TRIOMFAR <span class="amp">&amp;</span> BARZA</span>';if(es==='TRANS')return'<span class="bg b-tra">TRANSICIÓN</span>';return'<span class="bg b-na">'+es+'</span>'}
 function fN(n){return n?'$'+n.toLocaleString('es-MX'):'—'}
 
-function renderT(d){
-  let rows='',total=0;
-  d.forEach(e=>{
-    total+=e.mo;
-    const sb=e.so?'<span class="bg b-so">SOLD OUT</span> ':'';
-    const tp=e.t==='X'?'<span class="bg b-pr">Particular</span>':'<span class="bg b-pu">Público</span>';
-    rows+=`<tr><td>${e.n}</td><td style="white-space:nowrap">${e.f}</td><td><strong style="color:var(--t)">${e.c}</strong></td><td>${e.e}</td><td style="color:var(--t3);font-size:11px">${e.v}</td><td>${e.em}</td><td>${e.bo}</td><td style="font-size:11px">${e.ne}</td><td style="color:var(--gold);font-size:11px;font-weight:600">${e.mo?fN(e.mo):'—'}</td><td style="font-size:11px">${fCP(e.cp)}</td><td>${tp}</td><td>${sb}${e.no}</td></tr>`;
-  });
-  rows+=`<tr class="total-row"><td colspan="8" style="text-align:right;font-family:'Playfair Display',serif;font-size:15px;color:var(--gold);padding:16px 12px;font-weight:900;letter-spacing:1px">TOTAL FINAL</td><td style="font-family:'Playfair Display',serif;font-size:16px;color:var(--gold);font-weight:900;padding:16px 8px">${fN(total)}</td><td colspan="3" style="font-size:11px;color:var(--t2);padding:16px 8px">${d.length} eventos · Solo montos documentados</td></tr>`;
-  document.getElementById('tb').innerHTML=rows;
-}
+function renderT(d){let rows='',total=0;
+  d.forEach(e=>{total+=e.mo;const sb=e.so?'<span class="bg b-so">SOLD OUT</span> ':'';
+    rows+=`<tr><td>${e.n}</td><td style="white-space:nowrap;font-size:10px">${e.f}</td><td><strong style="color:var(--t)">${e.c}</strong></td><td style="font-size:10px">${e.e}</td><td style="color:var(--t3);font-size:10px">${e.v}</td><td style="font-size:10px">${e.em}</td><td style="font-size:10px">${e.bo}</td><td style="font-size:10px">${e.ne}</td><td style="color:var(--gold);font-weight:600;font-size:10px">${e.mo?fN(e.mo):'—'}</td><td style="font-size:10px">${fCP(e.cp)}</td><td style="font-size:10px">${e.er}</td><td>${fES(e.es)}</td><td style="font-size:10px">${sb}${e.no}</td></tr>`});
+  rows+=`<tr class="total-row"><td colspan="8" style="text-align:right;font-family:'Playfair Display',serif;font-size:14px;color:var(--gold);padding:14px 10px;font-weight:900;letter-spacing:1px">TOTAL FINAL</td><td style="font-family:'Playfair Display',serif;font-size:15px;color:var(--gold);font-weight:900;padding:14px 6px">${fN(total)}</td><td colspan="4" style="font-size:10px;color:var(--t2);padding:14px 6px">${d.length} eventos · Montos documentados</td></tr>`;
+  document.getElementById('tb').innerHTML=rows}
 renderT(ev);
 
-document.getElementById('si').addEventListener('input',function(){const q=this.value.toLowerCase();renderT(ev.filter(e=>(e.c+e.e+e.v+e.em+e.bo+e.no+e.ne+e.cp).toLowerCase().includes(q)))});
+document.getElementById('si').addEventListener('input',function(){const q=this.value.toLowerCase();renderT(ev.filter(e=>(e.c+e.e+e.v+e.em+e.bo+e.no+e.ne+e.cp+e.er).toLowerCase().includes(q)))});
 function ft(t,b){document.querySelectorAll('.fb').forEach(x=>x.classList.remove('ac'));b.classList.add('ac');
-  if(t==='all')renderT(ev);else if(t==='pub')renderT(ev.filter(e=>e.t==='P'));else if(t==='priv')renderT(ev.filter(e=>e.t==='X'));else if(t==='so')renderT(ev.filter(e=>e.so));else if(t==='ef')renderT(ev.filter(e=>e.cp.toLowerCase().includes('efectivo')||e.cp.toLowerCase().includes('piso')))}
+  if(t==='all')renderT(ev);else if(t==='spo')renderT(ev.filter(e=>e.es==='TRIUNFADOR'));else if(t==='trans')renderT(ev.filter(e=>e.es==='TRANS'));else if(t==='mar')renderT(ev.filter(e=>e.es==='TRIOMFAR & BARZA'));else if(t==='so')renderT(ev.filter(e=>e.so));else if(t==='ef')renderT(ev.filter(e=>e.cp.toLowerCase().includes('efectivo')||e.cp.toLowerCase().includes('piso')))}
+
+// CFDI Facturación
+new Chart(document.getElementById('cCFDI'),{type:'bar',data:{
+  labels:['Triunfador Logística\n(35 facturas)','SACM Regalías\n(17 facturas)','Triomfar\n(1 factura)'],
+  datasets:[{data:[37680359,2960806,1551724],
+    backgroundColor:[SPO+'.7)',G+'.5)',MAR+'.7)'],borderColor:[SPO+'.9)',G+'.7)',MAR+'.9)'],borderWidth:1,borderRadius:6,barPercentage:.5}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>'$'+ctx.parsed.y.toLocaleString('es-MX')}}},
+    scales:{y:{beginAtZero:true,grid:{color:'rgba(255,255,255,.04)'},ticks:{callback:v=>'$'+(v/1000000).toFixed(0)+'M'}},x:{grid:{display:false}}}}});
+
 </script>
 </body>
 </html>
